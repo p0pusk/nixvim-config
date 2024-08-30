@@ -1,5 +1,5 @@
 {
-  imports = [ ./options.nix ./keymaps.nix ./lsp ./plugins ];
+  imports = [ ./options.nix ./keymaps.nix ./plugins ];
 
   colorschemes.catppuccin.enable = true;
 }

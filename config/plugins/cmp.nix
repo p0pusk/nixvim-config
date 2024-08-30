@@ -1,4 +1,37 @@
 {
+  keymaps = [
+    {
+      key = "<tab>";
+      mode = "i";
+      action.__raw =
+        #lua
+        ''
+          function()
+            if require('luasnip').expand_or_jumpable() then
+              require('luasnip').expand_or_jump()
+            end
+          end
+        '';
+      options.noremap = false;
+      options.silent = true;
+    }
+
+    {
+      key = "<s-tab>";
+      mode = [ "i" "s" ];
+      action = "<cmd>lua require('luasnip').jump(-1)<cr>";
+      options.silent = true;
+    }
+
+    {
+      key = "<tab>";
+      mode = "s";
+      action = "<cmd>lua require('luasnip').jump(1)<cr>";
+      options.silent = true;
+    }
+
+  ];
+
   plugins = {
     luasnip.enable = true;
     copilot-lua = {
@@ -109,8 +142,6 @@
 
         window = {
           completion = {
-            winhighlight =
-              "FloatBorder:CmpBorder,Normal:CmpPmenu,CursorLine:CmpSel,Search:PmenuSel";
             scrollbar = false;
             sidePadding = 0;
             border = [ "╭" "─" "╮" "│" "╯" "─" "╰" "│" ];
@@ -118,8 +149,6 @@
 
           settings.documentation = {
             border = [ "╭" "─" "╮" "│" "╯" "─" "╰" "│" ];
-            winhighlight =
-              "FloatBorder:CmpBorder,Normal:CmpPmenu,CursorLine:CmpSel,Search:PmenuSel";
           };
         };
 
@@ -141,32 +170,6 @@
                   fallback()
                 elseif cmp.visible() then
                   cmp.confirm({ behavior = cmp.ConfirmBehavior.Insert, select = true })
-                else
-                  fallback()
-                end
-              end
-            '';
-          "<Down>" =
-            # lua
-            ''
-              function(fallback)
-                if cmp.visible() then
-                  cmp.select_next_item()
-                elseif require("luasnip").expand_or_jumpable() then
-                  vim.fn.feedkeys(vim.api.nvim_replace_termcodes("<Plug>luasnip-expand-or-jump", true, true, true), "")
-                else
-                  fallback()
-                end
-              end
-            '';
-          "<Up>" =
-            # lua
-            ''
-              function(fallback)
-                if cmp.visible() then
-                  cmp.select_prev_item()
-                elseif require("luasnip").jumpable(-1) then
-                  vim.fn.feedkeys(vim.api.nvim_replace_termcodes("<Plug>luasnip-jump-prev", true, true, true), "")
                 else
                   fallback()
                 end

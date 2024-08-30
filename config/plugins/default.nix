@@ -1,10 +1,14 @@
 {
   imports = [
+    ./lsp/servers.nix
+    ./lsp/none-ls.nix
+    ./lsp/trouble.nix
     ./autopairs.nix
     ./cmp.nix
     ./git.nix
     ./lualine.nix
     ./matchup.nix
+    ./navic.nix
     ./nvim-tree.nix
     ./project.nix
     ./telescope.nix
@@ -12,8 +16,5 @@
     ./wilder.nix
   ];
 
-  plugins = {
-    lazy.enable = true;
-    tmux-navigator.enable = true;
-  };
+  plugins = { tmux-navigator.enable = true; };
 }
