@@ -1,1 +1,6 @@
-{ plugins.noice = { enable = true; }; }
+{
+  plugins.noice = {
+    enable = true;
+    presets.bottom_search = true;
+  };
+}

@@ -9,18 +9,17 @@
     ./lualine.nix
     ./matchup.nix
     ./navic.nix
+    ./neogit.nix
     ./noice.nix
     ./nvim-tree.nix
     ./project.nix
     ./telescope.nix
     ./treesitter.nix
-    ./wilder.nix
   ];
 
   plugins = {
     tmux-navigator.enable = true;
     surround.enable = true;
     neoscroll.enable = true;
-    neogit.enable = true;
   };
 }
