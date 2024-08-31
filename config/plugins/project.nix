@@ -30,6 +30,6 @@
       "neovim.json"
       "flake.nix"
     ];
-    showHidden = true;
+    showHidden = false;
   };
 }
