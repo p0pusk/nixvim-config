@@ -6,7 +6,7 @@
     servers = {
       bashls.enable = true;
       clangd.enable = true;
-      nixd.enable = true;
+      nil-ls.enable = true;
       lua-ls = {
         enable = true;
         settings.telemetry.enable = false;
