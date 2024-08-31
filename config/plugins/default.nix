@@ -20,7 +20,18 @@
   plugins = {
     tmux-navigator.enable = true;
     surround.enable = true;
-    neoscroll.enable = true;
+    neoscroll = {
+      enable = true;
+      settings.hide_cursor = false;
+    };
     notify.enable = true;
+    nvim-colorizer.enable = true;
+    neoclip.enable = true;
+    comment = {
+      enable = true;
+      settings.pre_hook =
+        "require('ts_context_commentstring.integrations.comment_nvim').create_pre_hook()";
+    };
+
   };
 }
