@@ -29,6 +29,24 @@
       ignore = false;
     };
 
+    renderer = {
+      highlightGit = true;
+      rootFolderLabel = ":t";
+      icons = {
+        glyphs = {
+          git = {
+            deleted = "";
+            ignored = "◌";
+            renamed = "";
+            staged = "S";
+            unmerged = "";
+            unstaged = "";
+            untracked = "U";
+          };
+        };
+      };
+    };
+
     #lua
     onAttach.__raw = ''
       function (bufnr)

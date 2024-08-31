@@ -21,5 +21,6 @@
     tmux-navigator.enable = true;
     surround.enable = true;
     neoscroll.enable = true;
+    notify.enable = true;
   };
 }

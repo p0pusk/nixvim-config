@@ -1,7 +1,5 @@
 {
-  plugins.navic = {
-    enable = true;
-  };
+  plugins.navic = { enable = true; };
 
   plugins.barbecue = {
     enable = true;

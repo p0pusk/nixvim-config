@@ -101,7 +101,7 @@
         action = "quickfix";
         options.desc = "Telescope quickfix";
       };
-      "<leader>nk" = {
+      "<leader>sk" = {
         action = "keymaps";
         options.desc = "View keymappings";
       };
