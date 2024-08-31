@@ -34,4 +34,8 @@
       action = "<cmd>nohl<cr>";
     }
   ];
+
+  extraConfigVim = ''
+    set langmap=АF,Б<,ВD,ГU,ДL,ЕT,Ё`,Ж:,ЗP,ИB,ЙQ,КR,ЛK,МV,НY,ОJ,ПG,РH,СC,ТN,УE,ФA,Х[,ЦW,ЧX,ШI,ЩO,Ъ],ЫS,ЬM,Э',Ю.,ЯZ,аf,б>,вd,гu,дl,еt,ё`,ж:,зp,иb,йq,кr,лk,мv,нy,оj,пg,рh,сc,тn,уe,фa,х[,цw,чx,шi,щo,ъ],ыs,ьm,э',ю.,яz
+  '';
 }
