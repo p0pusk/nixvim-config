@@ -13,6 +13,7 @@
         end
       end
     '';
+    options.desc = "search files";
   }];
 
   plugins.telescope = let
@@ -64,54 +65,69 @@
     };
 
     keymaps = {
-      "<leader>," = "buffers";
-      "<leader>sr" = "oldfiles";
-      "<leader>sf" = "fd";
-      "<leader>H" = "help_tags";
-      "'r" = "live_grep";
+      "<leader>," = {
+        action = "buffers";
+        options.desc = "buffers";
+      };
+      "<leader>r" = {
+        action = "oldfiles";
+        options.desc = "recent files";
+      };
+      "<leader>sh" = {
+        action = "help_tags";
+        options.desc = "help";
+      };
+      "<leader>sf" = {
+        action = "fd";
+        options.desc = "find files";
+      };
+      "'r" = {
+        action = "live_grep";
+        options.desc = "grep";
+      };
       "<leader>go" = {
         action = "git_status";
-        options.desc = "Open changed file";
+        options.desc = "open changed file";
       };
       "<leader>gb" = {
         action = "git_branches";
-        options.desc = "Checkout branch";
+        options.desc = "checkout branch";
       };
       "<leader>gc" = {
         action = "git_commits";
-        options.desc = "Checkout commit";
+        options.desc = "checkout commit";
       };
       "<leader>gC" = {
         action = "git_bcommits";
-        options.desc = "Checkout commit (current file)";
+        options.desc = "checkout commit (current file)";
       };
       "<leader>ld" = {
         action = "diagnostics bufnr=0 theme=get_ivy";
-        options.desc = "Buffer diagnostics";
+        options.desc = "buffer diagnostics";
       };
       "<leader>ls" = {
         action = "lsp_document_symbols";
-        options.desc = "Document symbols";
+        options.desc = "document symbols";
       };
       "<leader>lS" = {
         action = "lsp_dynamic_workspace_symbols";
-        options.desc = "Workspace symbols";
+        options.desc = "workspace symbols";
       };
       "<leader>le" = {
         action = "quickfix";
-        options.desc = "Telescope quickfix";
+        options.desc = "telescope quickfix";
       };
       "<leader>sk" = {
         action = "keymaps";
-        options.desc = "View keymappings";
+        options.desc = "view keymappings";
       };
-      "<leader>M" = {
+      "<leader>sm" = {
         action = "man_pages";
-        options.desc = "Man pages";
+        options.desc = "man pages";
       };
-      "<leader>C" = {
+      "<leader>sc" = {
         action = "commands";
-        options.desc = "Commands";
+        options.desc = "search commands";
       };
     };
   };

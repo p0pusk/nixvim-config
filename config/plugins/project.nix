@@ -3,6 +3,7 @@
     mode = "n";
     key = "<leader>P";
     action = "<cmd>Telescope projects<cr>";
+    options.desc = "projects";
   }];
 
   plugins.project-nvim = {

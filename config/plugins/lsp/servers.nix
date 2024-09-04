@@ -19,17 +19,19 @@
       "gr" = "references";
       "gi" = "implementation";
       "K" = "hover";
-      "<leader>r" = "rename";
+      "<leader>lr" = "rename";
       "<f2>" = "rename";
       "<leader>." = "code_action";
+      "<leader>la" = "code_action";
       "Ï" = "format";
       "<m-F>" = "format";
     };
 
     keymaps.diagnostic = {
       "gl" = "open_float";
-      "]g" = "goto_next";
-      "[g" = "goto_prev";
+      "<leader>lj" = "goto_next";
+      "<leader>lk" = "goto_prev";
+      "<leader>lq" = "setloclist";
     };
 
     onAttach =
