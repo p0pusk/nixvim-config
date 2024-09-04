@@ -5,6 +5,7 @@
     ./lsp/trouble.nix
     ./autopairs.nix
     ./cmp.nix
+    ./dashboard.nix
     ./git.nix
     ./lualine.nix
     ./matchup.nix
