@@ -1,3 +1,5 @@
+{ config, ... }:
+
 {
   keymaps = [
     {
@@ -33,7 +35,13 @@
   ];
 
   plugins = {
-    luasnip.enable = true;
+    luasnip = {
+      enable = true;
+      fromVscode = [{
+        paths = [ "~/.config/snippets" ];
+        lazyLoad = false;
+      }];
+    };
 
     cmp-buffer = { enable = true; };
 

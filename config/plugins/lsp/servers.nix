@@ -7,6 +7,7 @@
       bashls.enable = true;
       clangd.enable = true;
       nil-ls.enable = true;
+      texlab.enable = true;
       lua-ls = {
         enable = true;
         settings.telemetry.enable = false;
@@ -47,6 +48,6 @@
 
   plugins.lsp-format = {
     enable = true;
-    lspServersToEnable = [ ];
+    lspServersToEnable = [ "texlab" ];
   };
 }
