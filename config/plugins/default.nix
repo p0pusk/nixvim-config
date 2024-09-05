@@ -22,6 +22,10 @@
   plugins = {
     tmux-navigator.enable = true;
     surround.enable = true;
+    vimtex = {
+      enable = true;
+      settings = { view_method = "zathura"; };
+    };
     neoscroll = {
       enable = true;
       settings.hide_cursor = false;
