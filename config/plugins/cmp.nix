@@ -1,23 +1,5 @@
-{ config, ... }:
-
 {
   keymaps = [
-    {
-      key = "<tab>";
-      mode = "i";
-      action.__raw =
-        #lua
-        ''
-          function()
-            if require('luasnip').expand_or_jumpable() then
-              require('luasnip').expand_or_jump()
-            end
-          end
-        '';
-      options.noremap = false;
-      options.silent = true;
-    }
-
     {
       key = "<s-tab>";
       mode = [ "i" "s" ];
@@ -73,6 +55,7 @@
           {
             name = "luasnip";
             max_item_count = 10;
+            option = { show_autosnippets = true; };
           }
           {
             name = "buffer";
@@ -140,7 +123,7 @@
                 }
 
                 local icon = icons[item.kind] or ""
-                item.dup = { buffer = 1, path = 1, nvim_lsp = 0 }
+                -- item.dup = { buffer = 1, path = 1, nvim_lsp = 0 }
                 item.kind = string.format("%s %s", icon, item.kind or "")
                 return item
               end
@@ -172,11 +155,14 @@
             # lua 
             ''
               function(fallback)
+                local luasnip = require('luasnip')
                 local line = vim.api.nvim_get_current_line()
                 if line:match("^%s*$") then
                   fallback()
                 elseif cmp.visible() then
                   cmp.confirm({ behavior = cmp.ConfirmBehavior.Insert, select = true })
+                elseif luasnip.expand_or_jumpable() then
+                  luasnip.expand_or_jump()
                 else
                   fallback()
                 end
