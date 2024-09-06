@@ -66,14 +66,28 @@
           end
         '';
         sources = [
-          { name = "nvim_lsp"; }
-          { name = "luasnip"; }
+          {
+            name = "nvim_lsp";
+            max_item_count = 10;
+          }
+          {
+            name = "luasnip";
+            max_item_count = 10;
+          }
           {
             name = "buffer";
+            max_item_count = 10;
             option.get_bufnrs.__raw = "vim.api.nvim_list_bufs";
+
           }
-          { name = "nvim_lua"; }
-          { name = "path"; }
+          {
+            name = "nvim_lua";
+            max_item_count = 10;
+          }
+          {
+            name = "path";
+            max_item_count = 10;
+          }
         ];
 
         formatting = {
@@ -126,6 +140,7 @@
                 }
 
                 local icon = icons[item.kind] or ""
+                item.dup = { buffer = 1, path = 1, nvim_lsp = 0 }
                 item.kind = string.format("%s %s", icon, item.kind or "")
                 return item
               end
