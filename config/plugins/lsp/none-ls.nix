@@ -20,8 +20,6 @@
       };
       diagnostics = { statix.enable = true; };
       code_actions = { refactoring.enable = true; };
-
-      completion.luasnip.enable = true;
     };
   };
 }

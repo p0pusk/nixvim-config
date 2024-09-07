@@ -35,11 +35,11 @@
             name = "nvim_lsp";
             max_item_count = 10;
           }
-          # {
-          #   name = "luasnip";
-          #   max_item_count = 10;
-          #   option = { show_autosnippets = true; };
-          # }
+          {
+            name = "luasnip";
+            max_item_count = 10;
+            option = { show_autosnippets = false; };
+          }
           {
             name = "buffer";
             max_item_count = 10;
@@ -61,7 +61,7 @@
           format =
             # lua
             ''
-              function(_, item)
+              function(entry, item)
                 local icons = {
                   Namespace = "󰌗",
                   Text = "󰉿",
@@ -105,9 +105,15 @@
                   TabNine = "",
                 }
 
+                local aliases = {
+                  nvim_lsp = 'lsp',
+                }
+
                 local icon = icons[item.kind] or ""
-                -- item.dup = { buffer = 1, path = 1, nvim_lsp = 0 }
                 item.kind = string.format("%s %s", icon, item.kind or "")
+                -- item.dup = { buffer = 1, path = 1, nvim_lsp = 0, luasnip = 0 }
+                item.menu =
+                  string.format('[%s]', aliases[entry.source.name] or entry.source.name)
                 return item
               end
             '';
