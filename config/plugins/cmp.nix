@@ -38,7 +38,6 @@
           {
             name = "luasnip";
             max_item_count = 10;
-            option = { show_autosnippets = false; };
           }
           {
             name = "buffer";
