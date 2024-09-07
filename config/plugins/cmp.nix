@@ -1,27 +1,10 @@
 {
-  keymaps = [
-    {
-      key = "<s-tab>";
-      mode = [ "i" "s" ];
-      action = "<cmd>lua require('luasnip').jump(-1)<cr>";
-      options.silent = true;
-    }
-
-    {
-      key = "<tab>";
-      mode = "s";
-      action = "<cmd>lua require('luasnip').jump(1)<cr>";
-      options.silent = true;
-    }
-
-  ];
-
   plugins = {
     luasnip = {
       enable = true;
       fromVscode = [{
         paths = [ "~/.config/snippets" ];
-        lazyLoad = false;
+        lazyLoad = true;
       }];
     };
 
@@ -52,11 +35,11 @@
             name = "nvim_lsp";
             max_item_count = 10;
           }
-          {
-            name = "luasnip";
-            max_item_count = 10;
-            option = { show_autosnippets = true; };
-          }
+          # {
+          #   name = "luasnip";
+          #   max_item_count = 10;
+          #   option = { show_autosnippets = true; };
+          # }
           {
             name = "buffer";
             max_item_count = 10;
@@ -150,11 +133,24 @@
           "<C-d>" = "cmp.mapping.scroll_docs(-4)";
           "<C-f>" = "cmp.mapping.scroll_docs(4)";
           "<C-Space>" = "cmp.mapping.complete()";
-          "<S-Tab>" = "cmp.mapping.close()";
+          "<S-Tab>" =
+            #lua
+            ''
+              cmp.mapping(function(fallback)
+                local luasnip = require('luasnip')
+                if cmp.visible() then
+                  cmp.mapping.close()
+                elseif luasnip.jumpable(-1) then
+                  luasnip.jump(-1)
+                else
+                  fallback()
+                end
+              end, {"i", "s"})
+            '';
           "<Tab>" =
             # lua 
             ''
-              function(fallback)
+              cmp.mapping(function(fallback)
                 local luasnip = require('luasnip')
                 local line = vim.api.nvim_get_current_line()
                 if line:match("^%s*$") then
@@ -166,7 +162,7 @@
                 else
                   fallback()
                 end
-              end
+              end, { "i", "s" })
             '';
         };
       };
