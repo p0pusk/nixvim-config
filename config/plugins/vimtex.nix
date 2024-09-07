@@ -8,6 +8,7 @@
       view_method = "zathura";
       compiler_latexmk.out_dir = "./build";
       compiler_latexrun.out_dir = "./build";
+      log_ignore = [ "Viewer cannot find Zathura window ID!" ];
     };
   };
 }
