@@ -4,6 +4,7 @@
       enable = true;
       folding = true;
       nixGrammars = true;
+      nixvimInjections = true;
 
       settings = {
         auto_install = true;
@@ -28,7 +29,10 @@
           "typescript"
           "hlsl"
         ];
-        highlight.enable = true;
+        highlight = {
+          enable = true;
+          disable = [ "latex" ];
+        };
         indent.enable = true;
       };
     };

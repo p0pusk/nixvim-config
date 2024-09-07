@@ -3,6 +3,7 @@
     enable = true;
 
     settings = {
+      delay = 500;
       spec = [
         {
           __unkeyed = "<leader>g";
