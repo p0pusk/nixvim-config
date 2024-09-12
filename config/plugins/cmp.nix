@@ -41,21 +41,20 @@
           }
           {
             name = "luasnip";
-            max_item_count = 5;
-          }
-          {
-            name = "buffer";
-            max_item_count = 5;
-            option.get_bufnrs.__raw = "vim.api.nvim_list_bufs";
-
+            max_item_count = 4;
           }
           {
             name = "nvim_lua";
-            max_item_count = 5;
+            max_item_count = 4;
           }
           {
             name = "path";
-            max_item_count = 5;
+            max_item_count = 4;
+          }
+          {
+            name = "buffer";
+            max_item_count = 2;
+            option.get_bufnrs.__raw = "vim.api.nvim_list_bufs";
           }
         ];
 
@@ -122,6 +121,9 @@
             '';
         };
 
+        completion.keyword_length = 2;
+        # completion.autocomplete = false;
+
         window = {
           completion = {
             scrollbar = false;
@@ -135,7 +137,16 @@
         };
 
         mapping = {
-          "<C-n>" = "cmp.mapping.select_next_item()";
+          "<C-n>" =
+            #lua
+            ''
+              cmp.mapping(function(fallback)
+                if cmp.visible() then
+                  cmp.select_next_item()
+                else cmp.complete() end
+              end, { "i", "s" })
+
+            '';
           "<C-p>" = "cmp.mapping.select_prev_item()";
           "<C-j>" = "cmp.mapping.select_next_item()";
           "<C-k>" = "cmp.mapping.select_prev_item()";
