@@ -1,3 +1,5 @@
+{ pkgs, ... }:
+
 {
   imports = [
     ./lsp/servers.nix
@@ -15,6 +17,7 @@
     ./noice.nix
     ./nvim-tree.nix
     ./project.nix
+    ./tabout.nix
     ./telescope.nix
     ./treesitter.nix
     ./vimtex.nix
@@ -36,6 +39,5 @@
       settings.pre_hook =
         "require('ts_context_commentstring.integrations.comment_nvim').create_pre_hook()";
     };
-
   };
 }

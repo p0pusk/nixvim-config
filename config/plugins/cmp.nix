@@ -37,25 +37,25 @@
         sources = [
           {
             name = "nvim_lsp";
-            max_item_count = 10;
+            max_item_count = 5;
           }
           {
             name = "luasnip";
-            max_item_count = 10;
+            max_item_count = 5;
           }
           {
             name = "buffer";
-            max_item_count = 10;
+            max_item_count = 5;
             option.get_bufnrs.__raw = "vim.api.nvim_list_bufs";
 
           }
           {
             name = "nvim_lua";
-            max_item_count = 10;
+            max_item_count = 5;
           }
           {
             name = "path";
-            max_item_count = 10;
+            max_item_count = 5;
           }
         ];
 
@@ -148,7 +148,7 @@
               cmp.mapping(function(fallback)
                 local luasnip = require('luasnip')
                 if cmp.visible() then
-                  cmp.mapping.close()
+                  cmp.close()
                 elseif luasnip.jumpable(-1) then
                   luasnip.jump(-1)
                 else
