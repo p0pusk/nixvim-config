@@ -2,8 +2,12 @@
   plugins = {
     luasnip = {
       enable = true;
-      fromVscode = [{
-        paths = [ "~/.config/snippets" ];
+      settings = {
+        enable_autosnippets = true;
+        store_selection_keys = "<Tab>";
+      };
+      fromLua = [{
+        paths = [ "~/.config/nixvim/snippets" ];
         lazyLoad = true;
       }];
     };
