@@ -77,11 +77,6 @@ end
 
 return {
 
-  s(
-    { trig = 'tt', dscr = "Expands 'tt' into '\texttt{}'" },
-    fmta('\\texttt{<>}', { i(1) })
-  ),
-
   s('table', {
     t('\\begin{tabular}{'),
     i(1, '0'),
@@ -95,7 +90,7 @@ return {
     { trig = 'preambule', dscr = 'preambule' },
     fmta( -- The snippet code actually looks like the equation environment it produces.
       [[
-      \documentclass[10ptfleqna4paper]{article}
+      \documentclass[10pt,fleqn,a4paper]{article}
       \usepackage[utf8]{inputenc}
       \usepackage[T2A]{fontenc}
       \usepackage{fullpage}
@@ -110,7 +105,7 @@ return {
       \usepackage{subcaption} 
       \usepackage{hyperref}
       \usepackage[a4paper,left=15mm,right=15mm,top=30mm,bottom=20mm]{geometry}
-      \DeclareGraphicsExtensions{.pdf.png.jpg}
+      \DeclareGraphicsExtensions{.pdf,.png,.jpg}
       \usepackage{indentfirst}
       \graphicspath{{images/}}
 

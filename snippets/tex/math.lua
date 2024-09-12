@@ -69,6 +69,50 @@ return {
   ),
 
   s(
+    { trig = 'lim' },
+    fmta('\\lim_{<>} <>', {
+      i(1),
+      i(0),
+    }),
+    {
+      condition = tex_utils.in_mathzone,
+      show_condition = tex_utils.in_mathzone,
+    }
+  ),
+
+  s(
+    { trig = 'tt', dscr = "Expands 'tt' into '\texttt{}'" },
+    fmta('\\texttt{<>}', { i(1) })
+  ),
+
+  s(
+    { trig = 't', dscr = "Expands 't' into '\text{}'" },
+    fmta('\\text{<>}', { i(1) })
+  ),
+
+  s(
+    { trig = 'impl' },
+    fmta('\\implies<>', {
+      i(0),
+    }),
+    {
+      condition = tex_utils.in_mathzone,
+      show_condition = tex_utils.in_mathzone,
+    }
+  ),
+
+  s(
+    { trig = 'to' },
+    fmta('\\to<>', {
+      i(0),
+    }),
+    {
+      condition = tex_utils.in_mathzone,
+      show_condition = tex_utils.in_mathzone,
+    }
+  ),
+
+  s(
     { trig = 'dd' },
     fmta('\\draw [<>] ', {
       i(1, 'params'),
@@ -83,6 +127,20 @@ return {
       \begin{equation}
         <>
       \end{equation}
+      ]],
+      -- The insert node is placed in the <> angle brackets
+      { i(0) },
+      { condition = tex_utils.in_text, show_condition = tex_utils.in_text }
+    )
+  ),
+
+  s(
+    { trig = 'fla', dscr = 'A LaTeX flalign environment' },
+    fmta( -- The snippet code actually looks like the equation environment it produces.
+      [[
+      \begin{flalign*}
+        <>
+      \end{flalign*}
       ]],
       -- The insert node is placed in the <> angle brackets
       { i(0) },
