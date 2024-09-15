@@ -3,8 +3,8 @@
     treesitter = {
       enable = true;
       folding = true;
-      nixGrammars = true;
-      nixvimInjections = true;
+      nixGrammars = false;
+      nixvimInjections = false;
 
       settings = {
         auto_install = true;
