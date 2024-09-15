@@ -15,13 +15,13 @@
       disabledFiletypes.statusline = [ "alpha" ];
       sections = {
         lualine_x = [
-          # {
-          #   name.__raw = "require('noice').api.statusline.mode.get";
-          #   # color = { fg = "#ff9e64"; };
-          #   extraConfig = {
-          #     cond.__raw = "require('noice').api.statusline.mode.has";
-          #   };
-          # }
+          {
+            name.__raw = "require('noice').api.statusline.mode.get";
+            # color = { fg = "#ff9e64"; };
+            extraConfig = {
+              cond.__raw = "require('noice').api.statusline.mode.has";
+            };
+          }
 
           {
             name.__raw = ''

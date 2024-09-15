@@ -30,7 +30,7 @@
           "hlsl"
         ];
         highlight = {
-          enable = true;
+          enable = false;
           disable = [ "latex" ];
         };
         indent.enable = true;
