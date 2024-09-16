@@ -31,7 +31,7 @@
     {
       mode = "n";
       key = "<leader>h";
-      action = "<cmd>nohl<cr>";
+      action = "<cmd>nohl<cr><cmd>NoiceDismiss<cr>";
     }
   ];
 
