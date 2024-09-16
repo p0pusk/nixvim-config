@@ -25,7 +25,7 @@
     {
       mode = "n";
       key = "<esc>";
-      action = "<cmd>Trouble quickfix close<cr><cmd>NvimTreeClose<cr>";
+      action = "<cmd>Trouble qflist close<cr><cmd>NvimTreeClose<cr>";
     }
 
     {
