@@ -1,8 +1,5 @@
 {
-  plugins.trouble = {
-    enable = true;
-    settings.focus = true;
-  };
+  plugins.trouble.enable = true;
 
   autoCmd = [{
     event = [ "QuickFixCmdPost" ];
