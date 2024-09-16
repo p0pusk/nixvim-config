@@ -1,6 +1,7 @@
 {
   plugins.none-ls = {
     enable = true;
+    settings = { diagnostics_format = "[#{c}] #{m} (#{s})"; };
     sources = {
       formatting = {
         stylua.enable = true;
@@ -18,7 +19,7 @@
           settings.extra_args = [ "-i" "4" "-ci" "-sr" ];
         };
       };
-      diagnostics = { statix.enable = true; };
+      diagnostics = { };
       code_actions = { refactoring.enable = true; };
     };
   };

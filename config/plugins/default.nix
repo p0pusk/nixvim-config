@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ./lsp/options.nix
     ./lsp/servers.nix
     ./lsp/none-ls.nix
     ./lsp/trouble.nix

@@ -16,15 +16,13 @@
       sections = {
         lualine_x = [
           {
-            name.__raw = "require('noice').api.statusline.mode.get";
+            __unkeyed-1.__raw = "require('noice').api.statusline.mode.get";
             # color = { fg = "#ff9e64"; };
-            extraConfig = {
-              cond.__raw = "require('noice').api.statusline.mode.has";
-            };
+            cond.__raw = "require('noice').api.statusline.mode.has";
           }
 
           {
-            name.__raw = ''
+            __unkeyed-1.__raw = ''
               function(msg)
                 local function list_registered_names(filetype)
                   local s = require('null-ls.sources')
@@ -101,18 +99,16 @@
               end
             '';
             color = { gui = "bold"; };
-            extraConfig = {
-              cond.__raw = ''
-                function()
-                  window_width_limit = 100
-                  return vim.o.columns > window_width_limit
-                end
-              '';
-            };
+            cond.__raw = ''
+              function()
+                window_width_limit = 100
+                return vim.o.columns > window_width_limit
+              end
+            '';
           }
         ];
         lualine_y = [{
-          name = "filetype";
+          __unkeyed-1 = "filetype";
           padding = {
             left = 1;
             right = 1;

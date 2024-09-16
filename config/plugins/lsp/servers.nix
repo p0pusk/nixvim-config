@@ -1,12 +1,14 @@
 {
   plugins.lsp = {
     enable = true;
-    capabilities = "require('cmp_nvim_lsp').default_capabilities()";
 
     servers = {
       bashls.enable = true;
       clangd.enable = true;
-      nil-ls.enable = true;
+      nil-ls = {
+        enable = true;
+        settings.diagnostics.excludedFiles = [ "*" ];
+      };
       texlab.enable = true;
       lua-ls = {
         enable = true;

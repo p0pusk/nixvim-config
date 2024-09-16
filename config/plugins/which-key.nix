@@ -17,6 +17,10 @@
           __unkeyed = "<leader>s";
           group = "search";
         }
+        {
+          __unkeyed = "<leader>c";
+          group = "trouble";
+        }
       ];
     };
   };

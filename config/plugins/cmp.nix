@@ -12,6 +12,8 @@
       }];
     };
 
+    lsp.capabilities = "require('cmp_nvim_lsp').default_capabilities()";
+
     cmp-buffer = { enable = true; };
 
     cmp-emoji = { enable = true; };
