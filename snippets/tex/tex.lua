@@ -91,12 +91,17 @@ return {
     { trig = 'preambule', dscr = 'preambule' },
     fmta( -- The snippet code actually looks like the equation environment it produces.
       [[
+      %! suppress = Makeatletter
+      %! suppress = TooLargeSection
+      %! suppress = MissingLabel
+
       \documentclass[10pt,fleqn,a4paper]{article}
       \usepackage[utf8]{inputenc}
       \usepackage[T2A]{fontenc}
       \usepackage{fullpage}
       \usepackage[russian]{babel}
-      \usepackage{amsthm,amsmath,amsfonts,amssymb}
+      \usepackage{amsthm,amsmath,amsfonts,amssymb,amstext}
+      \usepackage{mathtools}
       \usepackage{listings}
       \usepackage{xcolor}
       \usepackage{tikz}
@@ -106,8 +111,9 @@ return {
       \usepackage{subcaption} 
       \usepackage{hyperref}
       \usepackage[a4paper,left=15mm,right=15mm,top=30mm,bottom=20mm]{geometry}
-      \DeclareGraphicsExtensions{.pdf,.png,.jpg}
       \usepackage{indentfirst}
+
+      \DeclareGraphicsExtensions{.pdf,.png,.jpg}
       \graphicspath{{images/}}
 
       \newtheorem{problem}{Задача}
@@ -116,15 +122,26 @@ return {
        {\renewcommand\qedsymbol{$\blacksquare$}\begin{proof}[Решение]}
        {\end{proof}}
 
+
       \newtheorem*{definition}{Определение}
 
-      \renewcommand{\H}{\mathcal{H}}
       \newcommand{\F}{\mathbb{F}}
       \newcommand{\Z}{\mathbb{Z}}
       \newcommand{\N}{\mathbb{N}}
-
+      \newcommand{\R}{\mathbb{R}}
       \renewcommand{\O}{\mathcal{O}}
-      \renewcommand{\t}[1]{\texttt{#1}}  
+
+      \newcommand{\Let}{%
+        \mathord{\setbox0=\hbox{$\exists$}%
+          \hbox{\kern 0.125\wd0%
+             \vbox to \ht0{%
+             \hrule width 0.75\wd0%
+             \vfill%
+             \hrule width 0.75\wd0}%
+             \vrule height \ht0%
+             \kern 0.125\wd0}%
+        }%
+      }
 
       \title{<>}
       \author{Сон Артём}
