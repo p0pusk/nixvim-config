@@ -9,12 +9,14 @@
       settings = {
         auto_install = true;
         ensure_installed = [
+          "bash"
           "c"
           "cpp"
           "css"
           "dockerfile"
           "fish"
           "gitignore"
+          "hlsl"
           "html"
           "java"
           "javascript"
@@ -23,12 +25,13 @@
           "lua"
           "make"
           "markdown"
+          "markdown_inline"
           "nix"
+          "python"
+          "regex"
+          "typescript"
           "tsx"
           "vim"
-          "python"
-          "typescript"
-          "hlsl"
         ];
         folding.enable = true;
         highlight = {

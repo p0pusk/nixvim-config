@@ -17,7 +17,7 @@
         lualine_x = [
           {
             __unkeyed-1.__raw = "require('noice').api.statusline.mode.get";
-            # color = { fg = "#ff9e64"; };
+            color = { fg = "#ff9e64"; };
             cond.__raw = "require('noice').api.statusline.mode.has";
           }
 

@@ -22,6 +22,7 @@
       listchars = "trail:·,nbsp:◇,tab:→ ,extends:▸,precedes:◂";
       ignorecase = true;
       smartcase = true;
+      showmode = false;
 
       backup = false;
       writebackup = false;

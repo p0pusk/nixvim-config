@@ -50,6 +50,10 @@
             max_item_count = 4;
           }
           {
+            name = "neorg";
+            max_item_count = 4;
+          }
+          {
             name = "path";
             max_item_count = 4;
           }

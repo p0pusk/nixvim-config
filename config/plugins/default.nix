@@ -18,6 +18,7 @@
     ./neogit.nix
     ./neorg.nix
     ./noice.nix
+    ./notify.nix
     ./nvim-tree.nix
     ./project.nix
     ./tabout.nix

@@ -4,7 +4,7 @@
     modules = {
       "core.defaults" = { __empty = null; };
       "core.concealer" = { __empty = null; };
-      "core.completion" = { __empty = null; };
+      "core.completion" = { config.engine = "nvim-cmp"; };
       "core.dirman" = {
         config = {
           workspaces = {
