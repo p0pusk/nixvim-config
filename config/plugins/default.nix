@@ -10,11 +10,13 @@
     ./cmp.nix
     ./code_runner.nix
     ./dashboard.nix
+    ./dressing.nix
     ./git.nix
     ./lualine.nix
     ./matchup.nix
     ./navic.nix
     ./neogit.nix
+    ./neorg.nix
     ./noice.nix
     ./nvim-tree.nix
     ./project.nix
@@ -41,4 +43,21 @@
         "require('ts_context_commentstring.integrations.comment_nvim').create_pre_hook()";
     };
   };
+
+  extraPlugins = [
+    (pkgs.vimUtils.buildVimPlugin {
+      name = "cyrillic";
+      src = pkgs.fetchFromGitHub {
+        owner = "nativerv";
+        repo = "cyrillic.nvim";
+        rev = "86186af29eed2af1a069f9e36140d116a2765c80";
+        hash = "sha256-B2NjvaKJbkih8HLgFAYVqmTuSKAj7XrCBPVoVpYCXXE=";
+      };
+    })
+  ];
+  extraConfigLua = ''
+    require('cyrillic').setup({
+      no_cyrillic_abbrev = false, -- default
+    })
+  '';
 }
