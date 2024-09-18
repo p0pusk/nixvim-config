@@ -87,11 +87,11 @@
           {
             icon = "";
             icon_hl = "group";
-            desc = "dotfiles";
+            desc = "notes";
             desc_hl = "group";
-            key = "d";
+            key = "n";
             key_hl = "group";
-            action = "Telescope find_files cwd=~/.config";
+            action = "Neorg workspace home";
           }
         ];
 
