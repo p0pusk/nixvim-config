@@ -23,6 +23,7 @@
       ignorecase = true;
       smartcase = true;
       showmode = false;
+      conceallevel = 2;
 
       backup = false;
       writebackup = false;

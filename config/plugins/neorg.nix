@@ -3,7 +3,7 @@
     enable = true;
     modules = {
       "core.defaults" = { __empty = null; };
-      "core.concealer" = { __empty = null; };
+      "core.concealer" = { config = { icons.code_block.conceal = false; }; };
       "core.summary" = { __empty = null; };
       "core.completion" = { config.engine = "nvim-cmp"; };
       "core.integrations.telescope" = {
@@ -26,11 +26,24 @@
       mode = "n";
       key = "<leader>ni";
       action = "<plug>Neorg index<cr>";
+      options.desc = "neorg inspect";
     }
     {
       mode = "n";
       key = "<leader>nw";
       action = "<plug>(neorg.telescope.switch_workspace)";
+      options.desc = "neorg workspaces";
     }
   ];
+
+  autoCmd = [{
+    event = [ "FileType" ];
+    pattern = [ "norg" ];
+    callback.__raw = ''
+      function()
+         vim.keymap.set("n", "<tab>", "za", { buffer = true })
+        vim.keymap.set("n", "<leader>nc", "<cmd>Neorg toggle-concealer<cr>", { buffer = true})
+      end
+    '';
+  }];
 }

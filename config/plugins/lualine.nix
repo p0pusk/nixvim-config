@@ -12,7 +12,7 @@
         left = "";
         right = "";
       };
-      disabledFiletypes.statusline = [ "alpha" ];
+      disabledFiletypes.statusline = [ "alpha" "NvimTree" ];
       sections = {
         lualine_x = [
           {
