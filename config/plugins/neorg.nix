@@ -4,6 +4,7 @@
     modules = {
       "core.defaults" = { __empty = null; };
       "core.concealer" = { __empty = null; };
+      "core.summary" = { __empty = null; };
       "core.completion" = { config.engine = "nvim-cmp"; };
       "core.integrations.telescope" = {
         config = { insert_file_link = { show_title_preview = true; }; };
@@ -12,7 +13,7 @@
         config = {
           workspaces = {
             home = "~/notes/home";
-            work = "~/notes/mse";
+            mse = "~/notes/mse";
           };
           default_workspace = "home";
         };
