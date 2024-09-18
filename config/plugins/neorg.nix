@@ -4,6 +4,8 @@
     modules = {
       "core.defaults" = { __empty = null; };
       "core.concealer" = { __empty = null; };
+      "core.integrations.image" = { __empty = null; };
+      "core.latex.renderer" = { __empty = null; };
       "core.completion" = { config.engine = "nvim-cmp"; };
       "core.dirman" = {
         config = {
@@ -11,7 +13,7 @@
             home = "~/notes/home";
             work = "~/notes/work";
           };
-          use_popup = false;
+          default_workspace = "home";
         };
       };
     };

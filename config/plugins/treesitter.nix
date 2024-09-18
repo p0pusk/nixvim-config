@@ -35,7 +35,7 @@
         ];
         folding.enable = true;
         highlight = {
-          enable = false;
+          enable = true;
           disable = [ "latex" ];
         };
         indent.enable = true;

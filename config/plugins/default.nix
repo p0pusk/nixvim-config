@@ -12,6 +12,7 @@
     ./dashboard.nix
     ./dressing.nix
     ./git.nix
+    ./image.nix
     ./lualine.nix
     ./matchup.nix
     ./navic.nix
