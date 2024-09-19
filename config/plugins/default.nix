@@ -13,6 +13,7 @@
     ./dressing.nix
     ./git.nix
     ./lualine.nix
+    ./luasnip.nix
     ./matchup.nix
     ./navic.nix
     ./neogit.nix

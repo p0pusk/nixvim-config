@@ -35,6 +35,24 @@ env.in_tikz = function() -- TikZ picture environment detection
 end
 
 return {
+  s({ trig = '(%a+)__', regTrig = true, snippetType = 'autosnippet' }, {
+    f(function(_, snip)
+      return snip.captures[1]
+    end, {}),
+    t('_{'),
+    i(1),
+    t('}'),
+  }, { condition = env.in_mathzone, show_condition = env.in_mathzone }),
+
+  s({ trig = '(%a+)^^', regTrig = true, snippetType = 'autosnippet' }, {
+    f(function(_, snip)
+      return snip.captures[1]
+    end, {}),
+    t('^{'),
+    i(1),
+    t('}'),
+  }, { condition = env.in_mathzone, show_condition = env.in_mathzone }),
+
   s({ trig = 'mm' }, fmta('$<>$', { i(1) }), {
     condition = env.in_text,
     show_condition = env.in_text,
@@ -55,7 +73,6 @@ return {
       show_condition = env.in_text,
     }
   ),
-
 
   s(
     { trig = 'ff' },

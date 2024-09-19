@@ -1,17 +1,5 @@
 {
   plugins = {
-    luasnip = {
-      enable = true;
-      settings = {
-        enable_autosnippets = true;
-        store_selection_keys = "<Tab>";
-      };
-      fromLua = [{
-        paths = [ "~/.config/nixvim/snippets" ];
-        lazyLoad = true;
-      }];
-    };
-
     lsp.capabilities = "require('cmp_nvim_lsp').default_capabilities()";
 
     cmp-buffer = { enable = true; };
@@ -147,18 +135,34 @@
             #lua
             ''
               cmp.mapping(function(fallback)
-                if cmp.visible() then
-                  cmp.select_next_item()
-                else cmp.complete() end
+                local ls = require('luasnip')
+                if not cmp.visible() then
+                  if (ls.expand_or_jumpable()) then
+                    ls.change_choice(1)
+                  else
+                    cmp.complete()
+                  end
+                end
+                cmp.select_next_item({behavior = cmp.SelectBehavior.Select})
               end, { "i", "s" })
-
             '';
-          "<C-p>" = "cmp.mapping.select_prev_item()";
-          "<C-j>" = "cmp.mapping.select_next_item()";
-          "<C-k>" = "cmp.mapping.select_prev_item()";
+          "<C-p>" =
+            #lua
+            ''
+              cmp.mapping(function(fallback)
+                local ls = require('luasnip')
+                if not cmp.visible() then
+                  if (ls.expand_or_jumpable()) then
+                    ls.change_choice(-1)
+                  else
+                    cmp.complete()
+                  end
+                end
+                cmp.select_prev_item({behavior = cmp.SelectBehavior.Select})
+              end, { "i", "s" })
+            '';
           "<C-d>" = "cmp.mapping.scroll_docs(-4)";
           "<C-f>" = "cmp.mapping.scroll_docs(4)";
-          "<C-Space>" = "cmp.mapping.complete()";
           "<S-Tab>" =
             #lua
             ''
