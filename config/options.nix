@@ -16,6 +16,7 @@
       cindent = true;
       wrap = true;
       textwidth = 80;
+      colorcolumn = "80";
       tabstop = 2;
       softtabstop = 2;
       list = true;

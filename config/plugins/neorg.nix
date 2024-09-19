@@ -16,6 +16,7 @@
             mse = "~/notes/mse";
           };
           default_workspace = "home";
+          use_popup = true;
         };
       };
     };
@@ -25,8 +26,8 @@
     {
       mode = "n";
       key = "<leader>ni";
-      action = "<plug>Neorg index<cr>";
-      options.desc = "neorg inspect";
+      action = "<cmd>Neorg index<cr>";
+      options.desc = "neorg index";
     }
     {
       mode = "n";
@@ -41,8 +42,10 @@
     pattern = [ "norg" ];
     callback.__raw = ''
       function()
-         vim.keymap.set("n", "<tab>", "za", { buffer = true })
+        vim.keymap.set("n", "<tab>", "za", { buffer = true })
         vim.keymap.set("n", "<leader>nc", "<cmd>Neorg toggle-concealer<cr>", { buffer = true})
+        vim.o.concealcursor = "nc"
+        vim.o.wrap = false
       end
     '';
   }];

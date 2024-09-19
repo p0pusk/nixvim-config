@@ -91,7 +91,7 @@
             desc_hl = "group";
             key = "n";
             key_hl = "group";
-            action = "Neorg workspace home";
+            action = "Telescope neorg switch_workspace";
           }
         ];
 
