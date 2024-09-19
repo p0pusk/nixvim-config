@@ -30,7 +30,7 @@
 
   plugins = {
     tmux-navigator.enable = true;
-    surround.enable = true;
+    vim-surround.enable = true;
     neoscroll = {
       enable = true;
       settings.hide_cursor = false;

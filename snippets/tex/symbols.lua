@@ -35,12 +35,22 @@ tex_utils.in_tikz = function() -- TikZ picture environment detection
 end
 
 return {
-  s({ trig = 'eps' }, { t('\\varepsilon') }, {
+  s({ trig = ';e' }, { t('\\varepsilon') }, {
     condition = tex_utils.in_mathzone,
     show_condition = tex_utils.in_mathzone,
   }),
 
-  s({ trig = 'inf' }, { t('\\infty') }, {
+  s({ trig = ';a' }, { t('\\alpha') }, {
+    condition = tex_utils.in_mathzone,
+    show_condition = tex_utils.in_mathzone,
+  }),
+
+  s({ trig = ';l' }, { t('\\lambda') }, {
+    condition = tex_utils.in_mathzone,
+    show_condition = tex_utils.in_mathzone,
+  }),
+
+  s({ trig = ';inf' }, { t('\\infty') }, {
     condition = tex_utils.in_mathzone,
     show_condition = tex_utils.in_mathzone,
   }),

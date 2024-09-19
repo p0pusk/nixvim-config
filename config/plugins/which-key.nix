@@ -21,6 +21,10 @@
           __unkeyed = "<leader>c";
           group = "trouble";
         }
+        {
+          __unkeyed = "<leader>n";
+          group = "notes";
+        }
       ];
     };
   };

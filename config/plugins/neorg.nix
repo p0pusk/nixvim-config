@@ -33,7 +33,19 @@
       mode = "n";
       key = "<leader>nw";
       action = "<plug>(neorg.telescope.switch_workspace)";
-      options.desc = "neorg workspaces";
+      options.desc = "telescope workspaces";
+    }
+    {
+      mode = "n";
+      key = "<leader>nh";
+      action = "<cmd>Neorg workspace home<cr>";
+      options.desc = "MSE workspace";
+    }
+    {
+      mode = "n";
+      key = "<leader>nm";
+      action = "<cmd>Neorg workspace mse<cr>";
+      options.desc = "home workspace";
     }
   ];
 

@@ -9,35 +9,35 @@ local fmt = require('luasnip.extras.fmt').fmt
 local fmta = require('luasnip.extras.fmt').fmta
 local rep = require('luasnip.extras').rep
 
-local tex_utils = {}
-tex_utils.in_mathzone = function() -- math context detection
+local env = {}
+env.in_mathzone = function() -- math context detection
   return vim.fn['vimtex#syntax#in_mathzone']() == 1
 end
-tex_utils.in_text = function()
-  return not tex_utils.in_mathzone()
+env.in_text = function()
+  return not env.in_mathzone()
 end
-tex_utils.in_comment = function() -- comment detection
+env.in_comment = function() -- comment detection
   return vim.fn['vimtex#syntax#in_comment']() == 1
 end
-tex_utils.in_env = function(name) -- generic environment detection
+env.in_env = function(name) -- generic environment detection
   local is_inside = vim.fn['vimtex#env#is_inside'](name)
   return (is_inside[1] > 0 and is_inside[2] > 0)
 end
 -- A few concrete environments---adapt as needed
-tex_utils.in_equation = function() -- equation environment detection
-  return tex_utils.in_env('equation')
+env.in_equation = function() -- equation environment detection
+  return env.in_env('equation')
 end
-tex_utils.in_itemize = function() -- itemize environment detection
-  return tex_utils.in_env('itemize')
+env.in_itemize = function() -- itemize environment detection
+  return env.in_env('itemize')
 end
-tex_utils.in_tikz = function() -- TikZ picture environment detection
-  return tex_utils.in_env('tikzpicture')
+env.in_tikz = function() -- TikZ picture environment detection
+  return env.in_env('tikzpicture')
 end
 
 return {
   s({ trig = 'mm' }, fmta('$<>$', { i(1) }), {
-    condition = tex_utils.in_text,
-    show_condition = tex_utils.in_text,
+    condition = env.in_text,
+    show_condition = env.in_text,
   }),
 
   s(
@@ -51,10 +51,11 @@ return {
       { i(0) }
     ),
     {
-      condition = tex_utils.in_text,
-      show_condition = tex_utils.in_text,
+      condition = env.in_text,
+      show_condition = env.in_text,
     }
   ),
+
 
   s(
     { trig = 'ff' },
@@ -63,9 +64,57 @@ return {
       i(2),
     }),
     {
-      condition = tex_utils.in_mathzone,
-      show_condition = tex_utils.in_mathzone,
+      condition = env.in_mathzone,
+      show_condition = env.in_mathzone,
     }
+  ),
+
+  s(
+    { trig = 'it' },
+    fmta(
+      [[
+      \item <>
+      ]],
+      { i(0) },
+      {
+        condition = env.in_itemize,
+        show_condition = env.in_itemize,
+      }
+    )
+  ),
+
+  s(
+    { trig = 'itze' },
+    fmta(
+      [[
+    \begin{itemize}
+      \item <>
+    \end{itemize}
+    <>
+    ]],
+      { i(1), i(0) },
+      {
+        condition = env.in_mathzone,
+        show_condition = env.in_mathzone,
+      }
+    )
+  ),
+
+  s(
+    { trig = 'enum' },
+    fmta(
+      [[
+    \begin{enumerate}
+      \item <>
+    \end{enumerate}
+    <>
+    ]],
+      { i(1), i(0) },
+      {
+        condition = env.in_mathzone,
+        show_condition = env.in_mathzone,
+      }
+    )
   ),
 
   s(
@@ -75,8 +124,8 @@ return {
       i(0),
     }),
     {
-      condition = tex_utils.in_mathzone,
-      show_condition = tex_utils.in_mathzone,
+      condition = env.in_mathzone,
+      show_condition = env.in_mathzone,
     }
   ),
 
@@ -96,8 +145,8 @@ return {
       i(0),
     }),
     {
-      condition = tex_utils.in_mathzone,
-      show_condition = tex_utils.in_mathzone,
+      condition = env.in_mathzone,
+      show_condition = env.in_mathzone,
     }
   ),
 
@@ -107,8 +156,8 @@ return {
       i(0),
     }),
     {
-      condition = tex_utils.in_mathzone,
-      show_condition = tex_utils.in_mathzone,
+      condition = env.in_mathzone,
+      show_condition = env.in_mathzone,
     }
   ),
 
@@ -117,7 +166,7 @@ return {
     fmta('\\draw [<>] ', {
       i(1, 'params'),
     }),
-    { condition = tex_utils.in_tikz, show_condition = tex_utils.in_tikz }
+    { condition = env.in_tikz, show_condition = env.in_tikz }
   ),
 
   s(
@@ -130,7 +179,7 @@ return {
       ]],
       -- The insert node is placed in the <> angle brackets
       { i(0) },
-      { condition = tex_utils.in_text, show_condition = tex_utils.in_text }
+      { condition = env.in_text, show_condition = env.in_text }
     )
   ),
 
@@ -144,7 +193,7 @@ return {
       ]],
       -- The insert node is placed in the <> angle brackets
       { i(0) },
-      { condition = tex_utils.in_text, show_condition = tex_utils.in_text }
+      { condition = env.in_text, show_condition = env.in_text }
     )
   ),
 }
