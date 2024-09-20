@@ -1,7 +1,7 @@
 {
   keymaps = [{
     mode = "n";
-    key = "<leader>P";
+    key = "<leader>p";
     action = "<cmd>Telescope projects<cr>";
     options.desc = "projects";
   }];

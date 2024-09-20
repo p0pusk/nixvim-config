@@ -27,6 +27,8 @@
       prompt_prefix = " ❯ ";
       initial_mode = "insert";
       sorting_strategy = "ascending";
+      file_ignore_patterns = [ "/nix/store/*" ];
+      preview = false;
       results_title = "";
       layout_config = { prompt_position = "top"; };
       mappings = {
