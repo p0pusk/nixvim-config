@@ -10,6 +10,7 @@
         settings.diagnostics.excludedFiles = [ "*" ];
       };
       texlab.enable = true;
+      pyright.enable = true;
       lua-ls = {
         enable = true;
         settings.telemetry.enable = false;

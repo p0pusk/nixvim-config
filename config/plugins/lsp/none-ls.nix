@@ -8,7 +8,7 @@
         clang_format.enable = true;
         prettierd.enable = true;
         nixfmt.enable = true;
-        blackd = {
+        black = {
           enable = true;
           settings.extra_args = [ "--preview" ];
         };
