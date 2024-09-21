@@ -42,6 +42,8 @@ return {
 
   s({ trig = 'ее' }, fmta('\\texttt{<>}', { i(1) })),
 
+  s({ trig = 'ше' }, fmta('\\item <>', { i(0) })),
+
   s(
     { trig = 'вь' },
     fmta(

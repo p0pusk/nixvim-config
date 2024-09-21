@@ -21,13 +21,25 @@ local conds = require('luasnip.extras.conditions')
 
 return {
   s(
-    'trig',
-    c(1, {
-      t('Ugh boring, a text node'),
-      i(nil, 'At least I can edit something now...'),
-      f(function(args)
-        return 'Still only counts as text!!'
-      end, {}),
-    })
+    'math',
+    fmt(
+      [[
+      @math
+      {}
+      @end
+      ]],
+      { i(1) }
+    )
+  ),
+  s(
+    'code',
+    fmt(
+      [[
+      @code {}
+      {}
+      @end
+      ]],
+      { i(1), i(2) }
+    )
   ),
 }

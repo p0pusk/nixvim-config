@@ -137,7 +137,7 @@
               cmp.mapping(function(fallback)
                 local ls = require('luasnip')
                 if not cmp.visible() then
-                  if (ls.expand_or_jumpable()) then
+                  if (ls.choice_active()) then
                     ls.change_choice(1)
                   else
                     cmp.complete()
@@ -152,7 +152,7 @@
               cmp.mapping(function(fallback)
                 local ls = require('luasnip')
                 if not cmp.visible() then
-                  if (ls.expand_or_jumpable()) then
+                  if (ls.choice_active()) then
                     ls.change_choice(-1)
                   else
                     cmp.complete()

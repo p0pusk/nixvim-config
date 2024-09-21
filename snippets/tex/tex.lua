@@ -104,6 +104,19 @@ return {
   ),
 
   s(
+    'code',
+    fmta(
+      [[
+      \begin{lstlisting}[language=<>]
+        <>
+      \end{lstlisting}
+      ]],
+      { c(1, {i(nil), t("C++")}), i(2) }
+    ),
+    { condition = tex.in_text, show_condition = tex.in_text }
+  ),
+
+  s(
     { trig = 'preambule', dscr = 'preambule' },
     fmta( -- The snippet code actually looks like the equation environment it produces.
       [[

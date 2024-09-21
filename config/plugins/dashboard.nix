@@ -59,7 +59,6 @@
 
   in {
     enable = true;
-
     settings = {
       theme = "doom";
       config = {

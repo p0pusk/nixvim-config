@@ -38,11 +38,6 @@
     			active = {
     				virt_text = {{"●", "love"}}
     			}
-    		},
-    		[types.insertNode] = {
-    			active = {
-    				virt_text = {{"●", "iris"}}
-    			}
     		}
     	},
     })
