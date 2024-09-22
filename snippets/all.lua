@@ -20,10 +20,6 @@ local types = require('luasnip.util.types')
 local conds = require('luasnip.extras.conditions')
 
 return {
-  s({
-    trig = 'a__',
-    snippetType = 'autosnippet',
-  }, fmta([[ _{<>} ]], i(1))),
   s(
     { trig = 'trig' },
     c(1, {
