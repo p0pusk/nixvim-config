@@ -101,7 +101,7 @@ return {
   ),
 
   s(
-    { trig = 'itze' },
+    { trig = 'itz' },
     fmta(
       [[
     \begin{itemize}
