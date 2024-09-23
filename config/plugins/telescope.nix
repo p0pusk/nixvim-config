@@ -18,7 +18,7 @@
 
   plugins.telescope = let
     actions = "require('telescope.actions')";
-    lactions = "require('telescope.actions.layout')";
+    layout = "require('telescope.actions.layout')";
   in {
     enable = true;
     extensions.fzf-native = { enable = true; };
@@ -41,7 +41,7 @@
                         ${actions}.move_selection_next'';
           "<c-s>".__raw = "${actions}.send_selected_to_qflist";
           "<c-q>".__raw = "${actions}.send_to_qflist";
-          "<c-h>".__raw = "${lactions}.toggle_preview";
+          "<c-h>".__raw = "${layout}.toggle_preview";
         };
       };
     };
