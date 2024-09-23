@@ -36,6 +36,7 @@
       enable = true;
       settings.hide_cursor = false;
     };
+    org.enable = true;
     notify.enable = true;
     virt-column.enable = true;
     nvim-colorizer.enable = true;

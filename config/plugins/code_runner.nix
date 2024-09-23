@@ -37,7 +37,10 @@
         typescript = 'deno run',
         julia = 'julia $dir/$fileName',
         rust = 'cd $dir && rustc $fileName && $dir/$fileNameWithoutExt',
-        cpp = 'cd $dir && mkdir -p build && g++ -std=c++20 -Wall -Wextra -Wshadow -O2 -o ./build/$fileNameWithoutExt $fileName && ./build/$fileNameWithoutExt',
+        cpp = 'cd $dir && mkdir -p build && g++ -std=c++20 -Wall -Wextra ' ..
+              '-Wshadow -D KEKIS -O2 -o ' ..
+              './build/$fileNameWithoutExt $fileName ' ..
+              '&& ./build/$fileNameWithoutExt',
         c = 'cd $dir && mkdir -p build && gcc -fsanitize=address -Wall -Wextra -Wshadow -O2 -o ./build/$fileNameWithoutExt $fileName && ./build/$fileNameWithoutExt',
         swift = 'swift $dir/$fileName',
       },
