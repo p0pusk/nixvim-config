@@ -67,7 +67,7 @@
     };
 
     keymaps = {
-      "<leader>," = {
+      "<leader>b" = {
         action = "buffers";
         options.desc = "buffers";
       };

@@ -12,6 +12,7 @@
     ./dashboard.nix
     ./dressing.nix
     ./git.nix
+    ./harpoon.nix
     ./lualine.nix
     ./luasnip.nix
     ./matchup.nix
@@ -30,7 +31,6 @@
   ];
 
   plugins = {
-    tmux-navigator.enable = true;
     vim-surround.enable = true;
     neoscroll = {
       enable = true;
