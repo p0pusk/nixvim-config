@@ -1,14 +1,15 @@
 {
   plugins.harpoon = {
     enable = true;
+    enableTelescope = true;
     keymaps = {
       addFile = "<leader>a";
-      toggleQuickMenu = "<leader>,";
+      toggleQuickMenu = "<leader>;";
       navFile = {
-        "1" = "<c-j>";
-        "2" = "<c-k>";
-        "3" = "<c-l>";
-        "4" = "<c-h>";
+        "1" = "<c-k>";
+        "2" = "<c-j>";
+        "3" = "<c-h>";
+        "4" = "<c-l>";
       };
     };
   };
