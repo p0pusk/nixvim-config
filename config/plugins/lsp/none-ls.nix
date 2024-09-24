@@ -5,7 +5,6 @@
     sources = {
       formatting = {
         stylua.enable = true;
-        clang_format.enable = true;
         prettierd.enable = true;
         nixfmt.enable = true;
         black = {

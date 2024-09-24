@@ -52,18 +52,18 @@ return {
   }),
 
   s({ trig = ';p' }, { t('\\varphi') }, {
-    condition = tex_utils.in_mathzone,
-    show_condition = tex_utils.in_mathzone,
+    condition = env.in_mathzone,
+    show_condition = env.in_mathzone,
   }),
 
   s({ trig = ';d' }, { t('\\delta') }, {
-    condition = tex_utils.in_mathzone,
-    show_condition = tex_utils.in_mathzone,
+    condition = env.in_mathzone,
+    show_condition = env.in_mathzone,
   }),
 
   s({ trig = ';D' }, { t('\\Delta') }, {
-    condition = tex_utils.in_mathzone,
-    show_condition = tex_utils.in_mathzone,
+    condition = env.in_mathzone,
+    show_condition = env.in_mathzone,
   }),
 
   s({ trig = ';a' }, { t('\\alpha') }, {

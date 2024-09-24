@@ -4,7 +4,10 @@
 
     servers = {
       bashls.enable = true;
-      clangd.enable = true;
+      clangd = {
+        extraOptions = { CompileFlags = "-std=c++20"; };
+        enable = true;
+      };
       nil-ls = {
         enable = true;
         settings.diagnostics.excludedFiles = [ "*" ];
@@ -44,13 +47,11 @@
         if client.server_capabilities["documentSymbolProvider"] then
           require("nvim-navic").attach(client, bufnr)
         end
-        client.server_capabilities.documentFormattingProvider = false
-        client.server_capabilities.documentRangeFormattingProvider = true
       '';
   };
 
   plugins.lsp-format = {
     enable = true;
-    lspServersToEnable = [ "texlab" ];
+    lspServersToEnable = [ "texlab" "clangd" ];
   };
 }
