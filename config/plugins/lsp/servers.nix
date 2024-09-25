@@ -12,7 +12,13 @@
         enable = true;
         settings.diagnostics.excludedFiles = [ "*" ];
       };
-      texlab.enable = true;
+      texlab = {
+        enable = true;
+        # extraOptions = {
+        #   latexindent.local = "~/.latexindent.yaml";
+        #   formatterLineLength = 80;
+        # };
+      };
       pyright.enable = true;
       lua-ls = {
         enable = true;

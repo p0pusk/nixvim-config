@@ -104,6 +104,17 @@ return {
   ),
 
   s(
+    'su',
+    { t('\\subsection*{'), i(1), t('}') },
+    { condition = tex.in_text, show_condition = tex.in_text }
+  ),
+  s(
+    'sec',
+    { t('\\section*{'), i(1), t('}') },
+    { condition = tex.in_text, show_condition = tex.in_text }
+  ),
+
+  s(
     'code',
     fmta(
       [[
@@ -111,7 +122,7 @@ return {
         <>
       \end{lstlisting}
       ]],
-      { c(1, {i(nil), t("C++")}), i(2) }
+      { c(1, { i(nil), t('C++') }), i(2) }
     ),
     { condition = tex.in_text, show_condition = tex.in_text }
   ),
