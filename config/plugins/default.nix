@@ -32,6 +32,8 @@
 
   plugins = {
     vim-surround.enable = true;
+    tmux-navigator.enable = true;
+    web-devicons.enable = true;
     neoscroll = {
       enable = true;
       settings.hide_cursor = false;
