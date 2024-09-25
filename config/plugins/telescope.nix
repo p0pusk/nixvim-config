@@ -21,7 +21,7 @@
     layout = "require('telescope.actions.layout')";
   in {
     enable = true;
-    extensions.fzf-native = { enable = true; };
+    # extensions.fzf-native = { enable = true; };
 
     settings.defaults = {
       prompt_prefix = " ❯ ";
