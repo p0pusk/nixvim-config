@@ -12,6 +12,7 @@
     settings = {
       show_hidden = false;
       detectionMethods = [ "pattern" "lsp" ];
+      ignore_lsp = [ "clangd" ];
       patterns = [
         ".git"
         ".vscode"

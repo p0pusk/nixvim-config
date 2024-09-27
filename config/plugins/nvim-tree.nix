@@ -5,6 +5,7 @@
     autoReloadOnWrite = true;
     syncRootWithCwd = true;
     diagnostics.enable = true;
+    respectBufCwd = true;
     updateFocusedFile = {
       enable = true;
       updateRoot = true;
