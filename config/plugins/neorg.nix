@@ -56,8 +56,9 @@
       function()
         vim.keymap.set("n", "<tab>", "za", { buffer = true })
         vim.keymap.set("n", "<leader>nc", "<cmd>Neorg toggle-concealer<cr>", { buffer = true})
-        vim.o.concealcursor = "nc"
-        vim.o.wrap = false
+        vim.opt_local.concealcursor = "nc"
+        vim.opt_local.wrap = false
+        vim.opt_local.cc = "0"
       end
     '';
   }];
