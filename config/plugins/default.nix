@@ -39,10 +39,6 @@
       settings.hide_cursor = false;
     };
     notify.enable = true;
-    magma-nvim = {
-      settings = { image_provider = "kitty"; };
-      enable = true;
-    };
     virt-column.enable = true;
     nvim-colorizer.enable = true;
     neoclip.enable = true;
