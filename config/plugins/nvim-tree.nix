@@ -3,9 +3,10 @@
     enable = true;
     openOnSetupFile = true;
     autoReloadOnWrite = true;
-    syncRootWithCwd = true;
+    disableNetrw = true;
     diagnostics.enable = true;
-    respectBufCwd = true;
+    syncRootWithCwd = true;
+    respectBufCwd = false;
     updateFocusedFile = {
       enable = true;
       updateRoot = true;

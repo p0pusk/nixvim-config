@@ -28,7 +28,7 @@
         height = 1,
         width = 1,
       },
-      startinsert = true,
+      startinsert = false,
       -- put here the commands by filetype
       filetype = {
         java = 'cd $dir && javac $fileName && java $fileNameWithoutExt',
