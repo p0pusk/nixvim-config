@@ -32,7 +32,8 @@
       -- put here the commands by filetype
       filetype = {
         java = 'cd $dir && javac $fileName && java $fileNameWithoutExt',
-        python = 'python3 $dir/$fileName',
+        python = 'cd $dir && python3 $fileName',
+        hs = 'cd $dir && ghc $fileName',
         r = 'Rscript $dir/$fileName',
         typescript = 'deno run',
         julia = 'julia $dir/$fileName',

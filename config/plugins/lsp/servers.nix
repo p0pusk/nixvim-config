@@ -59,6 +59,6 @@
 
   plugins.lsp-format = {
     enable = true;
-    lspServersToEnable = [ "texlab" "clangd" ];
+    lspServersToEnable = [ "texlab" "clangd" "hls" ];
   };
 }
