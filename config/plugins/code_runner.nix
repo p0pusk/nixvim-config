@@ -33,7 +33,7 @@
       filetype = {
         java = 'cd $dir && javac $fileName && java $fileNameWithoutExt',
         python = 'cd $dir && python3 $fileName',
-        hs = 'cd $dir && ghc $fileName',
+        haskell = 'cd $dir && runhaskell $fileName',
         r = 'Rscript $dir/$fileName',
         typescript = 'deno run',
         julia = 'julia $dir/$fileName',
