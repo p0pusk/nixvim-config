@@ -59,6 +59,8 @@
         hash = "sha256-B2NjvaKJbkih8HLgFAYVqmTuSKAj7XrCBPVoVpYCXXE=";
       };
     })
+
+    pkgs.vimPlugins."haskell-tools-nvim"
   ];
   extraConfigLua = ''
     require('cyrillic').setup({
