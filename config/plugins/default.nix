@@ -7,6 +7,7 @@
     ./lsp/none-ls.nix
     ./lsp/trouble.nix
     ./autopairs.nix
+    ./cmake.nix
     ./cmp.nix
     ./code_runner.nix
     ./dashboard.nix

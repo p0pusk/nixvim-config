@@ -20,6 +20,7 @@
         # };
       };
       pyright.enable = true;
+      cmake.enable = true;
       lua-ls = {
         enable = true;
         settings.telemetry.enable = false;
