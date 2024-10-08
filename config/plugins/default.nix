@@ -43,6 +43,7 @@
     virt-column.enable = true;
     nvim-colorizer.enable = true;
     neoclip.enable = true;
+    clangd-extensions.enable = true;
     comment = {
       enable = true;
       settings.pre_hook =
