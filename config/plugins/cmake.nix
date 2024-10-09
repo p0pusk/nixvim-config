@@ -1,5 +1,8 @@
 {
-  plugins.cmake-tools = { enable = true; };
+  plugins.cmake-tools = {
+    enable = true;
+    settings = { cmake_build_directory = "build/\${variant:buildType}"; };
+  };
 
   autoCmd = [{
     event = [ "FileType" ];
