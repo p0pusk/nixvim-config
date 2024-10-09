@@ -1,7 +1,17 @@
 {
   plugins.cmake-tools = {
     enable = true;
-    settings = { cmake_build_directory = "build/\${variant:buildType}"; };
+    settings = {
+      cmake_build_directory = "build/\${variant:buildType}";
+      cmake_runner = {
+        name = "terminal";
+        terminal = {
+          split_direction = "horizontal";
+          split_size = 20;
+          focus = true;
+        };
+      };
+    };
   };
 
   autoCmd = [{
